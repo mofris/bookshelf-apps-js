@@ -1,0 +1,456 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+.header {
+    position: fixed;
+    height: 80px;
+    width: 100%;
+    z-index: 100;
+    padding: 0 20px;
+}
+
+.nav {
+    max-width: 1100px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.nav,
+.nav-item {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav-logo,
+.nav-link,
+.button-nav {
+    color: #fff;
+}
+
+.nav-logo {
+    font-size: 25px;
+}
+
+.nav-item {
+    column-gap: 25px;
+}
+
+.nav_link:hover {
+    color: #d9d9d9;
+}
+
+.button-nav {
+    padding: 6px 24px;
+    border: 2px solid #fff;
+    background: transparent;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.button-nav:active {
+    transform: scale(0.98);
+    transition: all 0.10s ease;
+}
+
+/* Content */
+.home {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    background-image: url("../img/bg.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.dashboard-card-disactive {
+    display: none;
+    transition: all 0.15s ease-in-out;
+}
+
+.dashboard-card-active {
+    position: fixed;
+    max-width: 900px;
+    max-height: 500px;
+    width: 90%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1.2);
+    background: #fff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: rgba(0, 0, 0, 0.1);
+    transition: all 0.15s ease-in-out;
+}
+
+.dashboard-card-active .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.dashboard-card-active .container h2 {
+    font-size: 22px;
+    color: #0b0217;
+    align-items: center;
+}
+
+.dashboard-card-active .container .button-add {
+    cursor: pointer;
+    width: 140px;
+    margin-left: 20px;
+    margin-top: 0px;
+    padding: 6px;
+    background: #7d2ae8;
+    padding: 10px 0;
+    border-radius: 10px;
+    color: #fff;
+    font-weight: 600;
+    border: none;
+}
+
+.dashboard-card-active .container .button-add:hover {
+    background: #1FD44A;
+    transition: all 0.5s ease;
+}
+
+.dashboard-card-active .container .button-add:active {
+    transform: scale(0.98);
+    transition: all 0.10s ease;
+}
+
+.card .container .button i {
+    font-size: 15px;
+}
+
+.container-card {
+    margin-top: 20px;
+    height: 300px;
+    overflow: auto;
+    padding: 10px;
+}
+
+.card-item {
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 5px;
+}
+
+.btn-sm {
+    background: #08cb49;
+    margin-top: 30px;
+    width: 100%;
+    padding: 6px;
+    border-radius: 10px;
+    color: #fff;
+    border: none;
+    transition: all 0.5s ease;
+    font-size: 11px;
+}
+
+.btn-sm-progress {
+    background: #cf4906;
+    margin-top: 30px;
+    width: 100%;
+    padding: 6px;
+    border-radius: 10px;
+    color: #fff;
+    border: none;
+    transition: all 0.5s ease;
+    font-size: 11px;
+}
+
+/* tambah data */
+
+.tambah-data-disactive {
+    display: none;
+    transition: all 0.15s ease-in-out;
+}
+
+.tambah-data-active {
+    position: fixed;
+    max-width: 400px;
+    width: 90%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1.2);
+    background: #fff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: rgba(0, 0, 0, 0.1);
+    transition: all 0.15s ease-in-out;
+}
+
+.tambah-data-active h2 {
+    text-align: center;
+}
+
+/* form input tambah data */
+.input-box {
+    position: relative;
+    margin-top: 20px;
+    width: 100%;
+    height: 40px;
+}
+
+.input-search {
+    position: relative;
+    margin-top: 20px;
+    width: 100%;
+    height: 40px;
+}
+
+.input-box input {
+    height: 100%;
+    width: 100%;
+    border: none;
+    outline: none;
+    padding: 0 30px;
+    color: #333;
+    transition: all 0.2s ease;
+    border-bottom: 1.5px solid #aaaaaa;
+}
+
+.input-search {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.input-search input {
+    height: 100%;
+    width: 100%;
+    border: none;
+    outline: none;
+    padding: 0 30px;
+    color: #333;
+    transition: all 0.2s ease;
+    border-bottom: 1.5px solid #aaaaaa;
+}
+
+.button-search {
+    cursor: pointer;
+    width: 170px;
+    height: 30px;
+    margin-left: 20px;
+    margin-top: 0px;
+    padding: 3px;
+    background: #f0a919;
+    border-radius: 10px;
+    color: #fff;
+    font-weight: 600;
+    border: none;
+}
+
+.btn-delete {
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    margin-left: 20px;
+    margin-top: 0px;
+    padding: 3px;
+    background: #e82e0d;
+    border-radius: 10px;
+    color: #fff;
+    border: none;
+}
+
+.i-del {
+    font-size: 20px;
+}
+
+.button-search:hover {
+    background: #c4870e;
+    transition: all 0.5s ease;
+}
+
+.button-search:active {
+    transform: scale(0.98);
+    transition: all 0.10s ease;
+}
+
+.input-box input:focus {
+    border-color: #7d2ae8;
+}
+
+.input-search input:focus {
+    border-color: #7d2ae8;
+}
+
+.input-box i {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    color: #707070;
+}
+
+.input-search i {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    color: #707070;
+}
+
+i {
+    left: 0;
+}
+
+input:focus~i.user {
+    color: #7d2ae8;
+}
+
+.input-box label {
+    margin-left: auto;
+    font-size: 16px;
+    color: #333;
+}
+
+.input-box-cek {
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.input-box-cek input[type="checkbox"] {
+    width: 16px;
+    height: 20px;
+    appearance: none;
+    border: 2px solid #333;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.input-box-cek input[type="checkbox"]:checked {
+    background-color: #333;
+    border-color: #333;
+}
+
+.input-box-cek input[type="checkbox"]:checked::before {
+    content: "\2713";
+    display: block;
+    width: 5px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    color: #fff;
+    font-size: 14px;
+}
+
+.button {
+    background: #7d2ae8;
+    margin-top: 30px;
+    width: 100%;
+    padding: 10px 0;
+    border-radius: 10px;
+    color: #fff;
+    font-weight: 600;
+    border: none;
+    transition: all 0.5s ease;
+}
+
+.button:hover {
+    background: #1FD44A;
+    transition: all 0.5s ease;
+}
+
+.button-kembali {
+    background: #707070;
+    margin-top: 5px;
+    width: 100%;
+    padding: 10px 0;
+    border-radius: 10px;
+    color: #fff;
+    font-weight: 600;
+    border: none;
+    transition: all 0.5s ease;
+}
+
+.button-kembali:hover {
+    background: #515151;
+    transition: all 0.5s ease;
+}
+
+.created-by {
+    font-size: 12px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.error-message {
+    display: none;
+}
+
+.show-error {
+    display: flex;
+    background-color: #ff0000;
+    color: white;
+    font-weight: bold;
+    padding: 10px;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    border-radius: 10px;
+    font-size: 12px;
+    transition: all 0.5s ease;
+}
+
+/* belum dibaca */
+.belum-dibaca-disactive {
+    display: none;
+    transition: all 0.15s ease-in-out;
+}
+
+.belum-dibaca-active {
+    position: fixed;
+    max-width: 900px;
+    width: 90%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1.2);
+    background: #fff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: rgba(0, 0, 0, 0.1);
+    transition: all 0.15s ease-in-out;
+}
+
+/* sudah dibaca */
+.sudah-dibaca-disactive {
+    display: none;
+    transition: all 0.15s ease-in-out;
+}
+
+.sudah-dibaca-active {
+    position: fixed;
+    max-width: 900px;
+    width: 90%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1.2);
+    background: #fff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: rgba(0, 0, 0, 0.1);
+    transition: all 0.15s ease-in-out;
+}
+
+.table {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}

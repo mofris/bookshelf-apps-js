@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bookshelf Apps | Mochammad Faris</title>
+    <link rel="stylesheet" href="assets/css/style-dashboard.css" />
+    <!-- Unicons -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <a href="#" class="nav-logo">Bookshelf Apps</a>
+            <ul class="nav-items">
+                <li class="nav-item">
+                    <button class="button-nav" id="btnDashboard">Dashboard</button>
+                    <button class="button-nav" id="btnBelumDibaca">Belum Dibaca</button>
+                    <button class="button-nav" id="btnSudahDibaca">Sudah Selesai Dibaca</button>
+                    <button class="button-nav" id="btnLogout">Logout</button>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Content -->
+    <section class="home">
+        <!-- dashboard -->
+        <div class="dashboard-card-active" id="dashboard">
+            <div class="container">
+                <h2>Data Buku</h2>
+                <button class="button-add" id="btnTambah">
+                    <i class="uil uil-plus-circle"></i>
+                    Tambah Data
+                </button>
+            </div>
+            <div class="container">
+                <div class="input-search">
+                    <input type="text" id="searchInput" placeholder="Cari Buku...">
+                    <i class="uil uil-search user"></i>
+                    <button class="button-search" id="searchButton">Cari</button>
+                </div>
+            </div>
+            <div class="container-card" id="bookList">
+            </div>
+        </div>
+
+        <!-- tambah data -->
+        <div class="tambah-data-disactive" id="tambahData">
+            <h2>Tambah Data Buku</h2>
+            <form id="addBookForm">
+                <p id="login-error" class="error-message">Login gagal. Silakan coba lagi!</p>
+                <div class="input-box">
+                    <input type="text" id="judul" placeholder="Judul Buku" required />
+                    <i class="uil uil-book user"></i>
+                </div>
+                <div class="input-box">
+                    <input type="text" id="penulis" placeholder="Penulis" required />
+                    <i class="uil uil-user user"></i>
+                </div>
+                <div class="input-box">
+                    <input type="text" id="tahun" placeholder="Tahun Terbit" required />
+                    <i class="uil uil-user user"></i>
+                </div>
+                <div class="input-box-cek">
+                    <input type="checkbox" id="cek">
+                    <label for="cek">Sudah dibaca</label>
+                </div>
+                <button class="button">Simpan Data</button>
+                <button class="button-kembali" id="btnKembali">
+                    Kembali
+                </button>
+                <div class="created-by">Created by Mochammad Faris</div>
+            </form>
+        </div>
+
+        <!-- belum dibaca -->
+        <div class="belum-dibaca-disactive" id="belumDibaca">
+            <div class="container">
+                <h2>Daftar Buku Belum Dibaca</h2>
+            </div>
+            <div class="container-card" id="noRead">
+            </div>
+        </div>
+
+        <!-- sudah dibaca -->
+        <div class="sudah-dibaca-disactive" id="sudahDibaca">
+            <div class="container">
+                <h2>Daftar Buku Sudah Dibaca</h2>
+            </div>
+            <div class="container-card" id="read">
+            </div>
+        </div>
+
+    </section>
+
+    <script src="assets/js/script-dashboard.js"></script>
+</body>
+
+</html>
