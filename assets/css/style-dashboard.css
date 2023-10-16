@@ -64,7 +64,6 @@ a {
     transition: all 0.10s ease;
 }
 
-/* Content */
 .home {
     position: relative;
     height: 100vh;
@@ -173,8 +172,6 @@ a {
     font-size: 11px;
 }
 
-/* tambah data */
-
 .tambah-data-disactive {
     display: none;
     transition: all 0.15s ease-in-out;
@@ -198,7 +195,6 @@ a {
     text-align: center;
 }
 
-/* form input tambah data */
 .input-box {
     position: relative;
     margin-top: 20px;
@@ -409,7 +405,6 @@ input:focus~i.user {
     transition: all 0.5s ease;
 }
 
-/* belum dibaca */
 .belum-dibaca-disactive {
     display: none;
     transition: all 0.15s ease-in-out;
@@ -429,7 +424,6 @@ input:focus~i.user {
     transition: all 0.15s ease-in-out;
 }
 
-/* sudah dibaca */
 .sudah-dibaca-disactive {
     display: none;
     transition: all 0.15s ease-in-out;

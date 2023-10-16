@@ -103,7 +103,8 @@ addBookForm.addEventListener("submit", function (e) {
     const id = +new Date();
     const title = document.getElementById("judul").value;
     const author = document.getElementById("penulis").value;
-    const year = document.getElementById("tahun").value;
+    const tahunValue = document.getElementById("tahun").value;
+    const year = parseInt(tahunValue);
     const cekbox = document.getElementById("cek");
 
     if (cekbox.checked) {
@@ -139,23 +140,39 @@ function renderBookList(booksToRender, isComplete) {
     noReadList.innerHTML = "";
     readList.innerHTML = "";
 
-    console.log("data", isComplete)
-
     const booksToShow = booksToRender || books;
     const filteredBooks = isComplete === undefined ? booksToShow : booksToShow.filter(book => book.isComplete === isComplete);
-
-    console.log(filteredBooks)
+    const filteredtrue = books.filter(book => book.isComplete === true);
+    const filteredfalse = books.filter(book => book.isComplete === false);
 
     if (books.length === 0) {
-        const noDataMessage = document.createElement("p");
-        noDataMessage.textContent = "Data Buku Masih Belum Tersedia!";
-        bookList.appendChild(noDataMessage);
+        if (isComplete === true) {
+            const noDataMessage = document.createElement("p");
+            noDataMessage.textContent = "Daftar buku yang telah selesai dibaca belum ada!";
+            readList.appendChild(noDataMessage);
+        } else if (filteredfalse.length === 0 && isComplete === false) {
+            const noDataMessage = document.createElement("p");
+            noDataMessage.textContent = "Daftar buku yang telah belum dibaca belum ada!";
+            noReadList.appendChild(noDataMessage);
+        } else {
+            const noDataMessage = document.createElement("p");
+            noDataMessage.textContent = "Data Buku Masih Belum Tersedia!";
+            bookList.appendChild(noDataMessage);
+        }
     } else if (booksToShow.length === 0) {
         const noDataMessage = document.createElement("p");
         noDataMessage.textContent = "Pencarian buku tidak ditemukan!";
         bookList.appendChild(noDataMessage);
+    } else if (filteredtrue.length === 0 && isComplete === true) {
+        const noDataMessage = document.createElement("p");
+        noDataMessage.textContent = "Daftar buku yang telah selesai dibaca belum ada!";
+        readList.appendChild(noDataMessage);
+    } else if (filteredfalse.length === 0 && isComplete === false) {
+        const noDataMessage = document.createElement("p");
+        noDataMessage.textContent = "Daftar buku yang telah belum dibaca belum ada!";
+        noReadList.appendChild(noDataMessage);
     } else {
-        for (const book of booksToShow) {
+        for (const book of filteredBooks) {
             const bookItem = document.createElement("div");
             bookItem.className = "card-item table";
             bookItem.innerHTML = `
@@ -187,7 +204,7 @@ function renderBookList(booksToRender, isComplete) {
             `;
 
             if (isComplete == undefined) {
-                bookList.appendChild(bookItem)
+                bookList.appendChild(bookItem);
             } else if (book.isComplete === true) {
                 readList.appendChild(bookItem);
             } else if (book.isComplete === false) {
@@ -215,7 +232,7 @@ function performSearch() {
         return (
             book.title.toLowerCase().includes(searchTerm) ||
             book.author.toLowerCase().includes(searchTerm) ||
-            book.year.toLowerCase().includes(searchTerm)
+            book.year.toString().includes(searchTerm)
         );
     });
     renderBookList(filteredBooks);

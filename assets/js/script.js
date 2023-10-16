@@ -13,10 +13,8 @@ pwShowHide.forEach((icon) => {
     });
 });
 
-// cek apakah browser yang digunakan mendukung web storage
 window.addEventListener('load', function () {
     if (typeof (Storage) !== 'undefined') {
-        // menambahkan localstorage data user
         localStorage.setItem("username", "faris");
         localStorage.setItem("password", "12345678");
     } else {
@@ -24,12 +22,10 @@ window.addEventListener('load', function () {
     }
 });
 
-// proses login
 const formLogin = document.getElementById("form-login");
 const loginError = document.getElementById("login-error");
 errorText = document.getElementById("login-error");
 
-// Cek apakah pengguna sudah login sebelumnya
 if (localStorage.getItem("loggedIn") === "true") {
     window.location.href = "dashboard.html";
 }
@@ -40,11 +36,9 @@ formLogin.addEventListener("submit", function (event) {
     const username = document.getElementById("username").value;
     const password = document.getElementById("password").value;
 
-    //logika login
     if (username === localStorage.getItem("username") && password === localStorage.getItem("password")) {
         localStorage.setItem("loggedIn", "true");
 
-        // lempar ke halaman setelah login sukses
         window.location.href = "dashboard.html";
     } else {
         errorText.classList.remove("error-message")
